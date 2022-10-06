@@ -2,12 +2,12 @@ import sys
 import os
 
 class Reader:
-    def __init__(self):
-        path  = sys.argv[2]
+    def __init__(self, path):
         if not os.path.exists(path):
             print("No file exists")
         else:
             with open(path, "r") as f:
-                print(f.readlines())
+                for line in f.readlines():
+                    print(line)
 
 
